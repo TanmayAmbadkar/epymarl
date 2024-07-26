@@ -2,7 +2,7 @@
 
 EPyMARL is  an extension of [PyMARL](https://github.com/oxwhirl/pymarl), and includes
 - **New!** Support for training in environments with individual rewards for all agents (for all algorithms that support such settings)
-- **New!** Update EPyMARL to use maintained [Gymnasium](https://gymnasium.farama.org/index.html) library instead of deprecated OpenAI Gym version 0.21.
+- **New!** Updated EPyMARL to use maintained [Gymnasium](https://gymnasium.farama.org/index.html) library instead of deprecated OpenAI Gym version 0.21.
 - **New!** Support for new environments: native integration of [PettingZoo](https://pettingzoo.farama.org/), [matrix games](https://github.com/uoe-agents/matrix-games), [SMACv2](https://github.com/oxwhirl/smacv2), and [SMAClite](https://github.com/uoe-agents/smaclite)
 - **New!** Support for logging to [weights and biases (W&B)](https://wandb.ai/)
 - **New!** We added a simple plotting script to visualise run data
@@ -16,7 +16,7 @@ See our blog post here: https://agents.inf.ed.ac.uk/blog/epymarl/
 ## Update as of *July 2024*!
 
 ### Update to Gymnasium
-It became increasingly difficult to install and rely on the deprecated OpenAI Gym version 0.21 EPyMARL previously depended on, so we we moved EPyMARL to use the maintained [Gymnasium](https://gymnasium.farama.org/index.html) library and API. This move required updating of several environments that were built to work with EPyMARL's `gymma` wrapper, including [level-based foraging](https://github.com/uoe-agents/lb-foraging) and [multi-robot warehouse](https://github.com/uoe-agents/robotic-warehouse). Alongside this update to EPyMARL, we therefore also updated these environments as well as [SMAClite](https://github.com/uoe-agents/smaclite), [matrix games](https://github.com/uoe-agents/matrix-games), and wrote wrappers to maintain compatibility with [SMAC](https://github.com/oxwhirl/smac) and added integration for [SMACv2](https://github.com/oxwhirl/smacv2). We hope these changes will simplify integration of new environments and ensure that EPyMARL remains usable for a longer time.
+It became increasingly difficult to install and rely on the deprecated OpenAI Gym version 0.21 EPyMARL previously depended on, so we moved EPyMARL to use the maintained [Gymnasium](https://gymnasium.farama.org/index.html) library and API. This move required updating of several environments that were built to work with EPyMARL's `gymma` wrapper, including [level-based foraging](https://github.com/uoe-agents/lb-foraging) and [multi-robot warehouse](https://github.com/uoe-agents/robotic-warehouse). Alongside this update to EPyMARL, we therefore also updated these environments as well as [SMAClite](https://github.com/uoe-agents/smaclite), [matrix games](https://github.com/uoe-agents/matrix-games), and wrote wrappers to maintain compatibility with [SMAC](https://github.com/oxwhirl/smac) and added integration for [SMACv2](https://github.com/oxwhirl/smacv2). We hope these changes will simplify integration of new environments and ensure that EPyMARL remains usable for a longer time.
 
 To use the legacy version of EPyMARL with OpenAI Gym version 0.21, please use the previous version `v1.0.0` of EPyMARL.
 
@@ -132,7 +132,7 @@ MPE:
 ```sh
 python src/main.py --config=qmix --env-config=gymma with env_args.time_limit=25 env_args.key="pz-mpe-simple-spread-v3"
 ```
-Note that for the MPE environments tag (predator-prey) and adversary, we provide pre-trained prey and adversary policies. These can be used to control the respective agents to make these tasks fully cooperative (useed in the paper) by setting `env_args.pretrained_wrapper="PretrainedTag"` or `env_args.pretrained_wrapper="PretrainedAdversary"`.
+Note that for the MPE environments tag (predator-prey) and adversary, we provide pre-trained prey and adversary policies. These can be used to control the respective agents to make these tasks fully cooperative (used in the paper) by setting `env_args.pretrained_wrapper="PretrainedTag"` or `env_args.pretrained_wrapper="PretrainedAdversary"`.
 
 SMAC:
 ```sh
@@ -237,7 +237,7 @@ By default, EPyMARL will use sacred to log results and models to the `results` d
 
 First, make sure to install W&B and follow their instructions to authenticate and setup your W&B library (see the [quickstart guide](https://docs.wandb.ai/quickstart) for more details).
 
-To tell EPyMARL to log data to W&B, you then need to specify the following config parameters:
+To tell EPyMARL to log data to W&B, you then need to specify the following parameters in [your configuration](#experiment-configurations):
 ```yaml
 use_wandb: True # Log results to W&B
 wandb_team: null # W&B team name
