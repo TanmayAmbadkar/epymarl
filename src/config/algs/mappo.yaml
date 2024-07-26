@@ -27,8 +27,8 @@ standardise_returns: False
 standardise_rewards: True
 q_nstep: 5 # 1 corresponds to normal r + gammaV
 critic_type: "cv_critic"
-epochs: 4
+epochs: 10
 eps_clip: 0.2
 name: "mappo"
 
-t_max: 20050000
+t_max: 50050000

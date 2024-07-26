@@ -1,0 +1,118 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "C:\\Users\\tanma\\Desktop\\MIXTAPE\\epymarl\\src",
+    "dependencies": [
+      "numpy==2.0.0",
+      "sacred==0.8.5",
+      "torch==2.3.1"
+    ],
+    "mainfile": "main.py",
+    "name": "pymarl",
+    "repositories": [
+      {
+        "commit": "76f888061700b3a778da72db139a0c9c5aeff848",
+        "dirty": false,
+        "url": "https://github.com/uoe-agents/epymarl.git"
+      },
+      {
+        "commit": "76f888061700b3a778da72db139a0c9c5aeff848",
+        "dirty": false,
+        "url": "https://github.com/uoe-agents/epymarl.git"
+      },
+      {
+        "commit": "76f888061700b3a778da72db139a0c9c5aeff848",
+        "dirty": false,
+        "url": "https://github.com/uoe-agents/epymarl.git"
+      }
+    ],
+    "sources": [
+      [
+        "main.py",
+        "_sources\\main_d5d1cad4c147a0b5b922a69036ced570.py"
+      ],
+      [
+        "run.py",
+        "_sources\\run_cb6c0c0486016e40fb17d5cb3a92505e.py"
+      ],
+      [
+        "utils\\logging.py",
+        "_sources\\logging_31034dff59fae30d08263ccee141603c.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"C:\\Users\\tanma\\anaconda3\\envs\\smacenv\\lib\\site-packages\\sacred\\config\\captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"C:\\Users\\tanma\\Desktop\\MIXTAPE\\epymarl\\src\\main.py\", line 44, in my_main\n    run(_run, config, _log)\n",
+    "  File \"C:\\Users\\tanma\\Desktop\\MIXTAPE\\epymarl\\src\\run.py\", line 67, in run\n    run_sequential(args=args, logger=logger)\n",
+    "  File \"C:\\Users\\tanma\\Desktop\\MIXTAPE\\epymarl\\src\\run.py\", line 204, in run_sequential\n    episode_sample = buffer.sample(args.batch_size)\n",
+    "  File \"C:\\Users\\tanma\\Desktop\\MIXTAPE\\epymarl\\src\\components\\episode_buffer.py\", line 242, in sample\n    return self[ep_ids]\n",
+    "  File \"C:\\Users\\tanma\\Desktop\\MIXTAPE\\epymarl\\src\\components\\episode_buffer.py\", line 152, in __getitem__\n    new_data.transition_data[k] = v[item]\n",
+    "RuntimeError: Could not infer dtype of numpy.int32\n"
+  ],
+  "heartbeat": "2024-07-23T19:50:15.042663",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz",
+    "gpus": {
+      "driver_version": "528.79",
+      "gpus": [
+        {
+          "model": "NVIDIA GeForce GTX 1050 Ti with Max-Q Design",
+          "persistence_mode": false,
+          "total_memory": 4096
+        }
+      ]
+    },
+    "hostname": "TanmayXPS-15",
+    "os": [
+      "Windows",
+      "Windows-10-10.0.22631-SP0"
+    ],
+    "python_version": "3.9.19"
+  },
+  "meta": {
+    "command": "my_main",
+    "config_updates": {
+      "env_args": {
+        "map_name": "3s5z"
+      }
+    },
+    "named_configs": [],
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--id": null,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "env_args.map_name=3s5z"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2024-07-23T19:47:35.034163",
+  "status": "FAILED",
+  "stop_time": "2024-07-23T19:50:15.048142"
+}
